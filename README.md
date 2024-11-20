@@ -147,12 +147,7 @@ ORDER BY timestamp;
 
 ## **Contributors**
 
-- [Your Name](https://github.com/your_username) - Project Lead
+- [Urbain ZE](https://github.com/your_username) - Project Lead
 
----
 
-## **License**
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----

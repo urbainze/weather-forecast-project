@@ -79,26 +79,23 @@ git clone https://github.com/urbainze/weather-forecast-project.git
 cd weather-forecast-project
 ```
 
-### **2. Configure Environment Variables**
-Create a `.env` file in the project root:
-```plaintext
-POSTGRES_USER=postgres
-POSTGRES_PASSWORD=your_password
-AIRFLOW_DB=airflow_db
-DATA_DB=data_db
-GF_SECURITY_ADMIN_USER=admin
-GF_SECURITY_ADMIN_PASSWORD=admin
-```
-
-### **3. Run the Project with Docker**
+### **2. Run the Project with Docker**
 ```bash
 docker-compose up -d
 ```
 
-### **5. Access the Services**
+### **3. Access the Services**
 - **Airflow**: [http://localhost:8080](http://localhost:8080) (default: `airflow`/`airflow`). It may take a few moments for Airflow to start, so feel free to refresh the page. Once the Airflow UI is accessible, you can begin the DAG.
 - **Grafana**: [http://localhost:3000](http://localhost:3000) (default: `admin`/`admin`). After starting the DAG, navigate to the Grafana UI, go to the `Home menu`,then select` Dashboard` . From there, you’ll be able to view the dashboard I’ve created.
 - **PostgreSQL**: Port `5432` (use a database client like pgAdmin or DBeaver).
+
+---
+
+## **Dashboard**
+
+he is an example of dashboard
+
+![Example of Dashboard](airflow_project.png)
 
 ---
 

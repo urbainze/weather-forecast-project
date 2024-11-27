@@ -96,8 +96,8 @@ docker-compose up -d
 ```
 
 ### **5. Access the Services**
-- **Airflow**: [http://localhost:8080](http://localhost:8080) (default: `airflow`/`airflow`)
-- **Grafana**: [http://localhost:3000](http://localhost:3000) (default: `admin`/`admin`)
+- **Airflow**: [http://localhost:8080](http://localhost:8080) (default: `airflow`/`airflow`). It may take a few moments for Airflow to start, so feel free to refresh the page. Once the Airflow UI is accessible, you can begin the DAG.
+- **Grafana**: [http://localhost:3000](http://localhost:3000) (default: `admin`/`admin`). After starting the DAG, navigate to the Grafana UI, go to the `Home menu`,then select` Dashboard` . From there, you’ll be able to view the dashboard I’ve created.
 - **PostgreSQL**: Port `5432` (use a database client like pgAdmin or DBeaver).
 
 ---
@@ -115,27 +115,6 @@ docker-compose up -d
 
 ---
 
-## **Testing**
-
-Run unit tests for each component:
-```bash
-pytest tests/
-```
-
----
-
-## **Example Queries for Grafana**
-
-Use this query in Grafana to visualize temperature data:
-```sql
-SELECT 
-    timestamp AS "time", 
-    temperature 
-FROM hourly_temperature
-ORDER BY timestamp;
-```
-
----
 
 ## **Future Improvements**
 

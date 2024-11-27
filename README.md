@@ -95,7 +95,7 @@ docker-compose up -d
 
 he is an example of dashboard
 
-![Example of Dashboard](airflow_project.png)
+![Example of Dashboard](airflow_project.PNG)
 
 ---
 

@@ -1,17 +1,32 @@
-version: '3.8'
+version: '3.9'
 
 services:
-  postgres:
+  airflow-db:
     image: postgres:15
-    container_name: postgres
+    container_name: airflow-db
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_DB: ${AIRFLOW_DB}
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - airflow_data:/var/lib/postgresql/data
+    networks:
+      - weather_network
+
+  data-db:
+    image: postgres:15
+    container_name: data-db
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${DATA_DB}
+    ports:
+      - "5433:5432"
+    volumes:
+      - data_storage:/var/lib/postgresql/data
+      - ./init-scripts:/docker-entrypoint-initdb.d
     networks:
       - weather_network
 
@@ -23,10 +38,12 @@ services:
     restart: always
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${AIRFLOW__CORE__SQL_ALCHEMY_CONN}
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@airflow-db:5432/${AIRFLOW_DB}
       AIRFLOW__WEBSERVER__RBAC: "True"
       AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
       AIRFLOW__WEBSERVER__WORKERS: 2
+    env_file:
+      - .env
     ports:
       - "8080:8080"
     volumes:
@@ -34,11 +51,13 @@ services:
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
     depends_on:
-      - postgres
+      - airflow-db
+      - data-db
     command: >
       bash -c "airflow db init &&
                airflow users create --username admin --password admin --firstname admin --lastname admin --role Admin --email urbainzeus@gmail.com &&
-               airflow webserver"
+               sleep 5 &&
+               exec airflow webserver"
     networks:
       - weather_network
 
@@ -50,15 +69,19 @@ services:
     restart: always
     environment:
       AIRFLOW__CORE__EXECUTOR: LocalExecutor
-      AIRFLOW__CORE__SQL_ALCHEMY_CONN: ${AIRFLOW__CORE__SQL_ALCHEMY_CONN}
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@airflow-db:5432/${AIRFLOW_DB}
+    env_file:
+      - .env
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
       - ./plugins:/opt/airflow/plugins
     depends_on:
-      - postgres
+      - airflow-db
+      - data-db
+      - airflow-webserver
     command: >
-      bash -c "airflow scheduler"
+      bash -c "sleep 10 && exec airflow scheduler "
     networks:
       - weather_network
 
@@ -71,14 +94,17 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - postgres
+      - data-db
     volumes:
       - grafana_data:/var/lib/grafana
+      - ./provisioning/dashboards:/var/lib/grafana/provisioning/dashboards
+      - ./provisioning/datasources:/var/lib/grafana/provisioning/datasources
     networks:
       - weather_network
 
 volumes:
-  postgres_data:
+  data_storage:
+  airflow_data :
   grafana_data:
 
 networks:

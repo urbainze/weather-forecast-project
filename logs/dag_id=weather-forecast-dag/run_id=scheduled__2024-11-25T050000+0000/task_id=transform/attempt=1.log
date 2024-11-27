@@ -1,0 +1,75 @@
+[2024-11-25T13:34:36.845+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-25T13:34:36.899+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [queued]>
+[2024-11-25T13:34:36.912+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [queued]>
+[2024-11-25T13:34:36.915+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-25T13:34:36.944+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform> on 2024-11-25 05:00:00+00:00
+[2024-11-25T13:34:36.959+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=228) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-25T13:34:36.961+0000] {standard_task_runner.py:63} INFO - Started process 250 to run task
+[2024-11-25T13:34:36.959+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'weather-forecast-dag', 'transform', 'scheduled__2024-11-25T05:00:00+00:00', '--job-id', '22', '--raw', '--subdir', 'DAGS_FOLDER/weather_pipeline.py', '--cfg-path', '/tmp/tmp4c3fduwa']
+[2024-11-25T13:34:36.962+0000] {standard_task_runner.py:91} INFO - Job 22: Subtask transform
+[2024-11-25T13:34:36.996+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-11-25T13:34:37.045+0000] {task_command.py:426} INFO - Running <TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [running]> on host 8a6a192a668b
+[2024-11-25T13:34:37.202+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Urbain ZE' AIRFLOW_CTX_DAG_ID='weather-forecast-dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-11-25T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-25T05:00:00+00:00'
+[2024-11-25T13:34:37.206+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-25T13:34:37.692+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-25T13:34:37.693+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-25T13:34:37.723+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=weather-forecast-dag, task_id=transform, run_id=scheduled__2024-11-25T05:00:00+00:00, execution_date=20241125T050000, start_date=20241125T133436, end_date=20241125T133437
+[2024-11-25T13:34:37.781+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-25T13:34:37.812+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-11-25T13:48:21.029+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-25T13:48:21.064+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [queued]>
+[2024-11-25T13:48:21.073+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [queued]>
+[2024-11-25T13:48:21.074+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-25T13:48:21.092+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform> on 2024-11-25 05:00:00+00:00
+[2024-11-25T13:48:21.107+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=230) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-25T13:48:21.109+0000] {standard_task_runner.py:63} INFO - Started process 240 to run task
+[2024-11-25T13:48:21.107+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'weather-forecast-dag', 'transform', 'scheduled__2024-11-25T05:00:00+00:00', '--job-id', '20', '--raw', '--subdir', 'DAGS_FOLDER/weather_pipeline.py', '--cfg-path', '/tmp/tmpcp53g58g']
+[2024-11-25T13:48:21.110+0000] {standard_task_runner.py:91} INFO - Job 20: Subtask transform
+[2024-11-25T13:48:21.131+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-11-25T13:48:21.175+0000] {task_command.py:426} INFO - Running <TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [running]> on host 4f4780ae54ec
+[2024-11-25T13:48:21.335+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Urbain ZE' AIRFLOW_CTX_DAG_ID='weather-forecast-dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-11-25T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-25T05:00:00+00:00'
+[2024-11-25T13:48:21.338+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-25T13:48:21.862+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-25T13:48:21.869+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-25T13:48:21.891+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=weather-forecast-dag, task_id=transform, run_id=scheduled__2024-11-25T05:00:00+00:00, execution_date=20241125T050000, start_date=20241125T134821, end_date=20241125T134821
+[2024-11-25T13:48:21.969+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-25T13:48:21.994+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-25T13:48:21.998+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-11-25T16:19:20.550+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-25T16:19:20.616+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [queued]>
+[2024-11-25T16:19:20.631+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [queued]>
+[2024-11-25T16:19:20.632+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-25T16:19:20.959+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform> on 2024-11-25 05:00:00+00:00
+[2024-11-25T16:19:20.980+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=265) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-25T16:19:20.983+0000] {standard_task_runner.py:63} INFO - Started process 285 to run task
+[2024-11-25T16:19:20.982+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'weather-forecast-dag', 'transform', 'scheduled__2024-11-25T05:00:00+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/weather_pipeline.py', '--cfg-path', '/tmp/tmpit01pisp']
+[2024-11-25T16:19:20.986+0000] {standard_task_runner.py:91} INFO - Job 23: Subtask transform
+[2024-11-25T16:19:21.063+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-11-25T16:19:21.128+0000] {task_command.py:426} INFO - Running <TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [running]> on host 9c7ea2cc0f0f
+[2024-11-25T16:19:21.374+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Urbain ZE' AIRFLOW_CTX_DAG_ID='weather-forecast-dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-11-25T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-25T05:00:00+00:00'
+[2024-11-25T16:19:21.376+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-25T16:19:21.875+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-25T16:19:21.877+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-25T16:19:21.895+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=weather-forecast-dag, task_id=transform, run_id=scheduled__2024-11-25T05:00:00+00:00, execution_date=20241125T050000, start_date=20241125T161920, end_date=20241125T161921
+[2024-11-25T16:19:22.006+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-25T16:19:22.035+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-25T16:19:22.090+0000] {local_task_job_runner.py:222} INFO - ::endgroup::
+[2024-11-25T16:30:07.507+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-25T16:30:07.540+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [queued]>
+[2024-11-25T16:30:07.549+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [queued]>
+[2024-11-25T16:30:07.549+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 2
+[2024-11-25T16:30:07.747+0000] {taskinstance.py:2330} INFO - Executing <Task(PythonOperator): transform> on 2024-11-25 05:00:00+00:00
+[2024-11-25T16:30:07.766+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=236) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-25T16:30:07.772+0000] {standard_task_runner.py:63} INFO - Started process 247 to run task
+[2024-11-25T16:30:07.770+0000] {standard_task_runner.py:90} INFO - Running: ['airflow', 'tasks', 'run', 'weather-forecast-dag', 'transform', 'scheduled__2024-11-25T05:00:00+00:00', '--job-id', '23', '--raw', '--subdir', 'DAGS_FOLDER/weather_pipeline.py', '--cfg-path', '/tmp/tmp69hdmpr6']
+[2024-11-25T16:30:07.775+0000] {standard_task_runner.py:91} INFO - Job 23: Subtask transform
+[2024-11-25T16:30:07.808+0000] {logging_mixin.py:188} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/settings.py:195 DeprecationWarning: The sql_alchemy_conn option in [core] has been moved to the sql_alchemy_conn option in [database] - the old setting has been used, but please update your config.
+[2024-11-25T16:30:07.885+0000] {task_command.py:426} INFO - Running <TaskInstance: weather-forecast-dag.transform scheduled__2024-11-25T05:00:00+00:00 [running]> on host eebbb4b46189
+[2024-11-25T16:30:08.017+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='Urbain ZE' AIRFLOW_CTX_DAG_ID='weather-forecast-dag' AIRFLOW_CTX_TASK_ID='transform' AIRFLOW_CTX_EXECUTION_DATE='2024-11-25T05:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-25T05:00:00+00:00'
+[2024-11-25T16:30:08.019+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-25T16:30:08.613+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-25T16:30:08.614+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-25T16:30:08.639+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=weather-forecast-dag, task_id=transform, run_id=scheduled__2024-11-25T05:00:00+00:00, execution_date=20241125T050000, start_date=20241125T163007, end_date=20241125T163008
+[2024-11-25T16:30:08.714+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-25T16:30:08.743+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-25T16:30:08.750+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -15,7 +15,7 @@ default_args = {
     'owner': 'Urbain ZE',
     'start_date': days_ago(0),
     'retries': 1,
-    'retry_delay': timedelta(minutes=5)
+    'retry_delay': timedelta(minutes=1)
 }
 
 # we define the dag architecture 
